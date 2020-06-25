@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
         callback(null, './uploads');
     },
     filename: (req, file, callback) => {
-        callback(null, file.fieldname + '-' + file.originalname.replace(path.extname(file.originalname), '45345') + '-' + Date.now() + path.extname(file.originalname));
+        callback(null, file.fieldname + '-' + Math.floor(Math.random() * 1000) + '-' + Date.now() + path.extname(file.originalname));
     }
 });
 
@@ -34,7 +34,7 @@ server.get('/api/resize', (req, res) => {
         height = parseInt(heightString)
     }
 
-    resize('./uploads/fotoproducto-emb45345-1583439989452.png', width, height).pipe(res);
+    resize('./uploads/fotoproducto-689-1593099523082.jpg', width, height).pipe(res);
 })
 
 server.listen(4001, () => {
