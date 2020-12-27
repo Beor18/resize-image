@@ -1,8 +1,8 @@
 ## Upload and Resize image with Nodejs
 
 - npm install
-- Crear carpeta "uploads"
-- node server.js
+- Crear carpeta "public/uploads"
+- npm run dev
 
 
 #### Rutas
@@ -12,6 +12,7 @@ form-data postman: fotoproducto
 ```
 
 ```js
-POST /api/resize
-GET /api/resize?w=valor
+POST /api/resize // upload image
+GET /api/resize // all images
+GET /api/:id/resize?w=valor // image by id and resize query string
 ```
