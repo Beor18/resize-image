@@ -20,7 +20,7 @@ router.route('/resize')
     .get(resizeRoute.getResize)
     .post(upload.single('fotoproducto'), resizeRoute.postResize)
 
-router.route('/:id/resize')
+router.route(`/:id`)
     .get(resizeRoute.getResizeById)
 
 module.exports = router;
